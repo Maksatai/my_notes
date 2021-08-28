@@ -1,0 +1,40 @@
+{% extends 'base_registration.html' %}
+{% block content %}
+<div class="overlay">
+  <form method="POST">
+   {% csrf_token %}
+     <div class="con">
+     <header class="head-form">
+        <h2>Регистрация</h2>
+     </header>
+     <br>
+     <div class="field-set">
+           <span class="input-item">
+             <i class="fa fa-user-circle"></i>
+           </span>
+           <input class="form-input" id="txt-input" type="text" placeholder="Имя пользователя" name="username">
+           <br>
+           <span class="input-item">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+           </span>
+           <input class="form-input" id="email-input" type="email" placeholder="Email" name="email">
+          <br>
+        <span class="input-item">
+          <i class="fa fa-key"></i>
+         </span>
+        <input class="form-input" type="password" placeholder="Пароль" id="pwd"  name="password">
+        <br>
+        <span class="input-item">
+          <i class="fa fa-key"></i>
+         </span>
+        <input class="form-input" type="password" placeholder="Подтвердите пароль" id="pwd"  name="password2">
+        <br>
+        <button class="log-in" type="submit"> Регистрация </button>
+     </div>
+    <div class="login-links">
+      <p3 class="text-center">Уже есть аккаунт? <a class="txt-brand" href="{% url 'login' %}"><font color=#29aafe>Войти</font></a></p3>
+    </div>
+    </div>
+  </form>
+  </div>
+  {% endblock content %}
