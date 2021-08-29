@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+<a href="{% url 'add_todo' %}">
+    <button class="create_button">Добавить заметку</button>
+</a>
+{% for i in forms %}
+{{ i.description }}
+{% if i.image %}
+    <img src="{{ i.image_url }}" width="200px" height="200px">
+{% endif %}
+{% endfor %}
+{% endblock content %}
