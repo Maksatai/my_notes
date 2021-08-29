@@ -4,21 +4,8 @@
         <div class="create_container">
             <form method="POST" class="form1">
                 {% csrf_token %}
-                <!-- {{ form.as_p }}
-                <input type="submit" class="btn btn-default" value="Добавить"/> -->
-                <input
-                class="create_input"
-                type="text"
-                placeholder="Напишите заметку"
-                name="description"
-                />
-                <br>
-                <input 
-                class="create_input"
-                type="file"
-                id="image" name="image"
-                accept="image/png, image/jpeg">
-                <button class="create_button" type="submit">Добавить</button>
+                {{ form.as_p }}
+                <button class="create_button" type="submit">Добавить</button> -->
             </form>
         </div>
     </section>

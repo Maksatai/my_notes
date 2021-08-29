@@ -10,18 +10,22 @@
  </head>
 <body>
     {% if user.is_authenticated %}
-    <div class="container">
-        <p2>{{ user.username }}</p2>
+        <div class="container">
+            <p2>{{ user.username }}</p2>
         
-        <img class="image" src="{% static 'media/notes.png' %}">
-        <a href="{% url 'home' %}"><p>My notes</p></a>
+            <img class="image" src="{% static 'media/notes.png' %}">
+            <a href="{% url 'home' %}"><p class="glav">My notes</p></a>
 
-        <a href="{% url 'logout' %}"><p1>Log out</p1></a>
-    </div>
+            <a href="{% url 'logout' %}"><p1>Log out</p1></a>
+        </div>
+    
+        {% block content %}
+        {% endblock content %}
+
     {% else %}
     <div class="container1">
         <img class="image" src="{% static 'media/notes.png' %}">
-        <a href="{% url 'home' %}"><p>My notes</p></a>
+        <a href="{% url 'home' %}"><p class="glav">My notes</p></a>
     </div>
     <br>
     <div class="container2">
@@ -30,7 +34,5 @@
     </div>
     {% endif %}
 
-    {% block content %}
-    {% endblock content %}
 </body>
 </html>

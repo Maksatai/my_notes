@@ -190,11 +190,11 @@ button:hover {
     height: 200px;
     margin-left: 300px;
 }
-p{
+p.glav{
+    margin-top: 70px;
     font-family: "Lucida Handwriting",cursive;
     color: rgb(180, 89, 89);
     font-size: 50px;
-    margin-top: 60px;
 }
 .container{
     display: flex;
@@ -255,7 +255,7 @@ section{
 .create_button{
     display: flex;
     padding: 12px 20px;
-    margin-top: 5px;
+    margin-top: 20px;
     justify-content: center;
     background-color: #ce93d8;
     border: 1px solid #ce93d8;
@@ -283,7 +283,16 @@ section{
     width: 400px;
     height: auto;
     padding: 10px 15px;
-    background-color: #c8e6c9;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+    margin-bottom: 20px;
+}
+.todo_item1{
+    border:1px solid gray;
+    border-radius: 5px;
+    width:unset;
+    height: auto;
+    padding: 10px 15px;
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
     margin-bottom: 20px;
 }
 
@@ -299,7 +308,7 @@ section{
     opacity: 0.5;
 }
 .todo_item.marked{
-    background-color: #ffe082;
+    background-image: linear-gradient(-225deg, #edf3b6 50%, #eff7af 50%);
     border: 2px solid #fad66a;
 }
 .todo_item_header{
@@ -330,9 +339,19 @@ section{
     margin: 0 5px;
     cursor: pointer;
 }
-h3{
-    color:black;
-}
+
 h5{
     color:rgb(126, 35, 35);
+}
+#description{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+p{
+    font-size: 22px;
+    color: black;
 }

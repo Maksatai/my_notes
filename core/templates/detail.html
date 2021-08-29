@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<div class="todo_container">
+    {% for i in forms %}
+    <div class="todo_item1">
+    <div class="todo_item_header">
+        <h3>{{ i.description }}&nbsp &nbsp</h3>
+        {% if i.image %}
+            <img src="{{ i.image_url }}" width="200px" height="200px">
+        {% endif %}
+    </div>
+    <br>
+    <div class="todo_item_footer">
+        <p>{{ i.created_at }}</p>
+        <div class="action_buttons">
+            <br>
+            <a href="{% url 'edit' i.id %}"><img src="{% static 'icons/pencil.png' %}"></a>
+            <a href="{% url 'delete-todo' i.id %}"><img src="{% static 'icons/delete.png' %}"></a>
+        </div>
+    </div>
+    </div>
+    {% endfor %}  
+</div>
+{% endblock content %}

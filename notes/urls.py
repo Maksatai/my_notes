@@ -25,6 +25,10 @@ urlpatterns = [
     path('',include('signup.urls')),
     path('',homepage,name="home"),
     path('add_todo/',add_todo,name="add_todo"),
+    path("delete-todo/<id>/",delete_todo,name="delete-todo"),
+    path("mark-todo/<id>/",mark_todo,name="mark-todo"),
+    path("detail/<id>/",notes_detail,name="detail"),
+    path('<int:id>/edit/',edit,name='edit'),
     path('',include('django.contrib.auth.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
