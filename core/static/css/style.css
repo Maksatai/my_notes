@@ -130,16 +130,6 @@ button {
     margin: 7% auto;
     letter-spacing: 0.05em;
 }
-/* Submits */
-.submits {
-    width: 48%;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
-}
-
-/*       Forgot Password button FAF3DD  */
-.frgt-pass {background: transparent;}
 
 /*     Sign Up button  */
 .sign-up {background: #B8F2E6;}

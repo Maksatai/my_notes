@@ -1,14 +1,14 @@
 {% extends "index.html" %}
 {% load static %}
 {% block content %}
-
+<a href="{% url 'home' %}"><img src="{% static 'icons/back.png' %}"></a>
 <div class="todo_container">
     {% for i in forms %}
     <div class="todo_item1">
     <div class="todo_item_header">
         <h3>{{ i.description }}&nbsp &nbsp</h3>
         {% if i.image %}
-            <img src="{{ i.image_url }}" width="200px" height="200px">
+            <img src="{{ i.image.url }}" width="200px" height="200px">
         {% endif %}
     </div>
     <br>

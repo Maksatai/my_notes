@@ -17,13 +17,14 @@ def add_todo(request):
         if form.is_valid():
             if 'image' in request.FILES:
                 form.image = request.FILES['image']
-            form.save()
+            form.save() 
         else:
             print(form.errors)
         return redirect(homepage)
     
     form = Form_for_notes()
     return render(request, 'add_todo.html', {'form':form})
+
 
 def mark_todo(request,id):
     todo=Notes.objects.get(id=id)
