@@ -14,9 +14,9 @@
             <p2>{{ user.username }}</p2>
         
             <img class="image" src="{% static 'media/notes.png' %}">
-            <a href="{% url 'home' %}"><p class="glav">My notes</p></a>
+            <p6><a class="glav" href="{% url 'home' %}">My notes</a></p6>
 
-            <a href="{% url 'logout' %}"><p1>Log out</p1></a>
+            <p1><a href="{% url 'logout' %}">Log out</a></p1>
         </div>
     
         {% block content %}
@@ -25,7 +25,7 @@
     {% else %}
     <div class="container1">
         <img class="image" src="{% static 'media/notes.png' %}">
-        <a href="{% url 'home' %}"><p class="glav">My notes</p></a>
+        <p6><a class="glav" href="#">My notes</a></p6>
     </div>
     <br>
     <div class="container2">

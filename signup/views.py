@@ -7,6 +7,7 @@ class SignupView(TemplateView):
     template_name = "sign_up.html"
 
     def dispatch(self, request, *args, **kwargs):
+        context = {}
         if request.method == 'POST':
             username = request.POST.get('username')
             email = request.POST.get('email')
@@ -16,5 +17,6 @@ class SignupView(TemplateView):
             if password == password2:
                 User.objects.create_user(username, email, password)
                 return redirect(reverse("login"))
-
-        return render(request, self.template_name)
+            else:
+                context['error']="Пароли не совпадают, попробуйте еще раз"
+        return render(request, self.template_name, context)

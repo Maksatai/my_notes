@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: #263238;
 }
 
 body {
@@ -18,9 +19,8 @@ body {
     opacity: .95;
 }
 
-form {
+form, .form1 {
     width: 450px;
-    min-height: 500px;
     height: auto;
     border-radius: 5px;
     margin: 2% auto;
@@ -28,16 +28,11 @@ form {
     padding: 2%;
     background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
-
+form{
+    min-height: 500px;
+}
 .form1 {
-    width: 450px;
     min-height: 200px;
-    height: auto;
-    border-radius: 5px;
-    margin-top:0px;
-    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
-    padding: 2%;
-    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
 /* form Container */
 form .con {
@@ -53,19 +48,23 @@ form .con {
     margin: 0 auto;
 }
 
-/* the header form form */
 header {
     margin: 2% auto 10% auto;
     text-align: center;
 }
-/* Login title form form */
+
 header h2 {
     font-size: 250%;
     font-family: 'Playfair Display', serif;
     color: #3e403f;
 }
 /*  A welcome message or an explanation of the login form */
-header p {letter-spacing: 0.05em;}
+header p {
+    letter-spacing: 0.01em;
+    color: red;
+    font-size: 15px;
+    margin-top: 10px;
+}
 
 
 .input-item {
@@ -74,8 +73,6 @@ header p {letter-spacing: 0.05em;}
     padding: 14.5px 0px 15px 9px;
     border-radius: 5px 0px 0px 5px;
 }
-
-
 
 /* Show/hide password Font Icon */
 /* inputs form  */
@@ -104,11 +101,6 @@ input:focus {
     border-radius: 5px;
 }
 
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
-
-/* input[type="text"] {min-width: 250px;} */
-/* buttons  */
 button {
     display: inline-block;
     color: #252537;
@@ -178,54 +170,41 @@ button:hover {
 .image{
     width: 200px;
     height: 200px;
-    margin-left: 300px;
+    /* margin-left: 300px; */
 }
-p.glav{
-    margin-top: 70px;
+a.glav{
     font-family: "Lucida Handwriting",cursive;
     color: rgb(180, 89, 89);
     font-size: 50px;
 }
-.container{
+p6{
+    margin-top: 70px;
+}
+.container,.container1,.container2{
     display: flex;
     flex-direction: row;
     font-family: "Lucida Handwriting",cursive;
     padding: 10px;
+    justify-content: center;
 }
-p1{
+.container2{
+    font-size: 30px;
+}
+/* p1{
     margin-left: 280px;
     color:black;
 }
 p2{
-    margin-left: 80px;
-}
+    margin-left: 50px;
+} */
 a{
     text-decoration: none;
 }
 .link2{
     margin-left: 50px;
 }
-.container1{
-    display: flex;
-    flex-direction: row;
-    font-family: "Lucida Handwriting",cursive;
-    padding: 10px;
-    margin-left: 100px;
-}
-.container2{
-    display: flex;
-    flex-direction: row;
-    font-family: "Lucida Handwriting",cursive;
-    padding: 10px;
-    font-size: 30px;
-    margin-left: 500px;
-}
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    color: #263238;
-}
+
+
 section{
     width: 100%;
     padding: 20px;
@@ -267,36 +246,21 @@ section{
     flex-wrap: wrap;
     width: 100%;
 }
-.todo_item{
+.todo_item, .todo_item1{
     border:1px solid gray;
     border-radius: 5px;
-    width: 400px;
     height: auto;
     padding: 10px 15px;
     background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
     margin-bottom: 20px;
+}
+.todo_item{
+    width: 400px;
 }
 .todo_item1{
-    border:1px solid gray;
-    border-radius: 5px;
     width:unset;
-    height: auto;
-    padding: 10px 15px;
-    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
-    margin-bottom: 20px;
 }
 
-.todo_item.done{
-    background-color: #e0e0e0;
-    text-decoration: line-through;
-    color: #757575;
-}   
-.todo_item.done h4, .todo_item.done p, .todo_item.done span{
-    color: #757575;
-}
-.todo_item.done img{
-    opacity: 0.5;
-}
 .todo_item.marked{
     background-image: linear-gradient(-225deg, #edf3b6 50%, #eff7af 50%);
     border: 2px solid #fad66a;
@@ -344,4 +308,16 @@ h5{
 p{
     font-size: 22px;
     color: black;
+}
+.button{
+    background-color: #ce93d8;
+    border: 1px solid #ce93d8;
+    color: white;
+    margin-top: 20px;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 3px;
+    display:inline-block;
+    font-size: 18px;
+    font-weight: bold;
 }

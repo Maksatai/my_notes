@@ -1,32 +1,46 @@
 {% extends 'base_registration.html' %}
 {% block content %}
-<div class="overlay">
-  <form method="POST">
-   {% csrf_token %}
-     <div class="con">
-     <header class="head-form">
-        <h2>Войти</h2>
-     </header>
-     <br>
-     <div class="field-set">
-           <span class="input-item">
-             <i class="fa fa-user-circle"></i>
-           </span>
-           <input class="form-input" id="txt-input" type="text" placeholder="Имя пользователя" name="username">
-        <br>
-        <span class="input-item">
-          <i class="fa fa-key"></i>
-         </span>
-        <input class="form-input" type="password" placeholder="Пароль"  name="password">
-        <br>
-        <button class="log-in" type="submit">Войти</button>
-     </div>
-     <div class="other">
-        <div class="login-links">
-         <p3 class="text-center">Еще нету аккаунта? <a class="txt-brand" href="{% url 'signup' %}"><font color=#29aafe>Регистрируйся</font></a></p3>
-       </div>
-     </div>
-    </div>
-  </form>
+
+<form method="POST">
+{% csrf_token %}
+
+<div class="con">
+
+  <header class="head-form">
+    <h2>Войти</h2>
+    
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+  </header>
+  <br>
+
+  <div class="field-set">
+    {% if form.username.errors %}
+      {{ form.username.html_error_list }}
+    {% endif %}
+    <span class="input-item">
+      <i class="fa fa-user-circle"></i>
+    </span>
+
+    <input class="form-input" id="txt-input" type="text" placeholder="Имя пользователя" name="username" required>
+    <br>
+
+    <span class="input-item">
+      <i class="fa fa-key"></i>
+    </span>
+
+    <input class="form-input" type="password" placeholder="Пароль"  name="password" required>
+    <br>
+
+    <button class="sign-up" type="submit">Войти</button>
   </div>
+
+  <div class="login-links">
+    <p3 class="text-center">Еще нету аккаунта? <a class="txt-brand" href="{% url 'signup' %}">Регистрируйся</a></p3>
+  </div>
+  
+</div>
+</form>
+
 {% endblock content %}

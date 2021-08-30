@@ -2,9 +2,11 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/checkbox.css' %}">
-<a href="{% url 'add_todo' %}">
-    <button class="create_button">Добавить заметку</button>
-</a>
+
+<div class="container">
+    <a class="button" href="{% url 'add_todo' %}">Добавить заметку</a>
+</div>
+
 <div class="todo_container">
     {% for i in forms %}
     <div class="todo_item
