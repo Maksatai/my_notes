@@ -4,9 +4,7 @@ from django.views.generic import TemplateView
 from core.models import Notes
 from core.forms import Form_for_notes
 
-
 def homepage(request):
-    # form_object=Notes.objects.all()
     form_object=Notes.objects.filter(author__username=request.user)
     return render(request, 'home.html',{"forms":form_object})
 

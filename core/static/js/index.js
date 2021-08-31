@@ -21,3 +21,19 @@ document.getElementById("eye").addEventListener("click", function () {
   }
 }, false);
 
+
+function save_checkbox(name)
+{
+    localStorage[name] = document.getElementById(name).checked ? 1 : 0
+}
+function load_checkbox()
+{
+    var table = document.getElementById('resources')
+    var input = table.getElementsByTagName('input')
+ 
+    for(var i = 0; i < input.length; i++)
+    {
+        var checkbox = input[i]
+        checkbox.checked = parseInt(localStorage[checkbox.id], 10)
+    }
+}
