@@ -29,6 +29,7 @@ urlpatterns = [
     path("mark-todo/<id>/",mark_todo,name="mark-todo"),
     path("detail/<id>/",notes_detail,name="detail"),
     path('<int:id>/edit/',edit,name='edit'),
+    path('profile/',ProfileView.as_view(),name="profile"),
     path('',include('django.contrib.auth.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

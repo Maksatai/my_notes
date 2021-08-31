@@ -7,40 +7,30 @@
   
   <header class="head-form">
     <h2>Регистрация</h2>
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
   </header>
   <br>
-
+  
   <div class="field-set">
+
+    {% for field in user_form %}
+    {% if field.errors %}
+      {{ field.errors }}
+    {% endif %}
+  
     <span class="input-item">
-      <i class="fa fa-user-circle"></i>
+      {% if field == user_form.username %}
+        <i class="fa fa-user-circle"></i>
+      {% endif %}
+      {% if field == user_form.email %}
+        <i class="fa fa-envelope"></i>
+      {% endif %}
+      {% if field == user_form.password or field == user_form.password2 %}
+        <i class="fa fa-key"></i>
+      {% endif %}
     </span>
-    <input class="form-input" id="txt-input" type="text" placeholder="Имя пользователя" name="username" required>
-    
-    <br>
-
-    <span class="input-item">
-      <i class="fa fa-envelope" aria-hidden="true"></i>
-    </span>
-
-    <input class="form-input" id="email-input" type="email" placeholder="Email" name="email" required>
-    <br>
-
-    <span class="input-item">
-      <i class="fa fa-key"></i>
-    </span>
-
-    <input class="form-input" type="password" placeholder="Пароль" id="pwd"  name="password" required>
-    <br>
-
-    <span class="input-item">
-      <i class="fa fa-key"></i>
-    </span>
-
-    <input class="form-input" type="password" placeholder="Подтвердите пароль" id="pwd"  name="password2" required>
-    <br>
+      {{ field }}
+      <br>
+    {% endfor %}
 
     <button class="sign-up" type="submit"> Регистрация </button>
   </div>

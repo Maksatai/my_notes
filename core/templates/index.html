@@ -11,7 +11,7 @@
 <body>
     {% if user.is_authenticated %}
         <div class="container">
-            <p2>{{ user.username }}</p2>
+            <p1><a href="{% url 'profile' %}">{{ user.username }}</a></p1>
         
             <img class="image" src="{% static 'media/notes.png' %}">
             <p6><a class="glav" href="{% url 'home' %}">My notes</a></p6>

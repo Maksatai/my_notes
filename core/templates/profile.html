@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<a href="{% url 'home' %}"><img src="{% static 'icons/back.png' %}"></a>
+
+<div class="form1">
+    <header><h3>Мой профиль:</h3></header>
+    <h3>Имя: {{ user.username }}</h3><br>
+    <h3>Почта: {{ user.email }}</h3>
+</div>
+{% endblock content %}

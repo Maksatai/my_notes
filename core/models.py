@@ -1,8 +1,10 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 
 class Notes(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     description=models.TextField()
     image = models.ImageField(upload_to='images',null=True,blank=True)
     created_at=models.DateTimeField(default=datetime.now, blank=True)

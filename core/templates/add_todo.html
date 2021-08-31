@@ -6,8 +6,11 @@
             <a href="{% url 'home' %}"><img src="{% static 'icons/back.png' %}"></a>            
             <form method="POST" class="form1" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button class="create_button" type="submit">Добавить</button> -->
+                {{ form.description.label }}<br>
+                {{ form.description }}<br>
+                {{ form.image }}
+
+                <button class="create_button" type="submit">Добавить</button>
             </form>
         </div>
     </section>
