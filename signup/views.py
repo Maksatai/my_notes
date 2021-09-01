@@ -15,7 +15,7 @@ class SignupView(TemplateView):
                 new_user.set_password(user_form.cleaned_data['password'])
             # Save the User object
                 new_user.save()
-                return redirect("/")
+                return redirect("login")
         else:
             user_form = UserRegistrationForm()
         return render(request, self.template_name, {'user_form': user_form})
